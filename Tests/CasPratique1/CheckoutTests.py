@@ -1,5 +1,5 @@
 import pytest
-from Sources.Checkout import Checkout
+from Sources.CasPratique1.Checkout import Checkout
 
 def test_checkout():
     checkout: Checkout = Checkout()

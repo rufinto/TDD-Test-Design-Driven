@@ -1,0 +1,25 @@
+info:
+  name: 08_Update_Issue_Status
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: https://api.taiga.io/api/v1/issues/{{issue_id}}
+  headers:
+    - name: Authorization
+      value: Bearer {{auth_token}}
+  body:
+    type: json
+    data: |-
+      {
+        "status": 12,
+        "version": {{issue_version}}
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

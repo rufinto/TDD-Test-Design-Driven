@@ -1,0 +1,39 @@
+info:
+  name: 06_Create_Issue
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://api.taiga.io/api/v1/issues
+  headers:
+    - name: Authorization
+      value: Bearer {{auth_token}}
+  body:
+    type: json
+    data: |-
+      {
+        "project": {{project_id}},
+        "subject": "Issue créée depuis Bruno",
+        "description": "Création de test via API Bruno"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        bru.setVar("issue_id", body.id);
+    - type: tests
+      code: |-
+        test("La création de l'issue retourne 201 ou 200", function () {
+          expect([200, 201]).to.include(res.getStatus());
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

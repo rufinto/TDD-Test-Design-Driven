@@ -1,0 +1,32 @@
+info:
+  name: 07_Get_Issue_By_Id
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: https://api.taiga.io/api/v1/issues/{{issue_id}}
+  headers:
+    - name: Authorization
+      value: Bearer {{auth_token}}
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        bru.setVar("issue_version", body.version);
+        bru.setVar("current_status", body.status);
+    - type: tests
+      code: |-
+        test("La lecture de l'issue retourne 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

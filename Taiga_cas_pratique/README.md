@@ -44,7 +44,6 @@ La collection est composée des requêtes suivantes :
 
 Un fichier `issues.json` contient les données des anomalies :
 
-```json
 [
   {
     "subject": "Bug login",

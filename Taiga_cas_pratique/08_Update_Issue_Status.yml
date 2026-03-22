@@ -13,7 +13,7 @@ http:
     type: json
     data: |-
       {
-        "status": 12,
+        "status": 12449136,
         "version": {{issue_version}}
       }
   auth: inherit

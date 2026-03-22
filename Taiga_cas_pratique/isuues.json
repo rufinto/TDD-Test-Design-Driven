@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "Bug login",
+    "description": "Erreur lors de la connexion utilisateur"
+  },
+  {
+    "subject": "Bug affichage homepage",
+    "description": "Les éléments de la page d'accueil sont mal alignés"
+  },
+  {
+    "subject": "Erreur API 500",
+    "description": "Le endpoint /users retourne une erreur 500"
+  }
+]

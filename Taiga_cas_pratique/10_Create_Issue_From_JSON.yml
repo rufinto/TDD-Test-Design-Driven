@@ -1,0 +1,46 @@
+info:
+  name: 10_Create_Issue_From_JSON
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: https://api.taiga.io/api/v1/issues
+  headers:
+    - name: Authorization
+      value: Bearer {{auth_token}}
+  body:
+    type: json
+    data: |-
+      {
+        "project": {{project_id}},
+        "subject": "{{json_subject}}",
+        "description": "{{json_description}}"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        let index = parseInt(bru.getEnvVar("index") || "0");
+        const count = parseInt(bru.getEnvVar("count") || "0");
+
+        console.log("Issue créée pour index =", index);
+
+        if (index < count - 1) {
+          index++;
+          bru.setEnvVar("index", index);
+          bru.setNextRequest("09_Get_Local_Issue_Data");
+        }
+    - type: tests
+      code: |-
+        test("Création issue OK", function () {
+          expect([200, 201]).to.include(res.getStatus());
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

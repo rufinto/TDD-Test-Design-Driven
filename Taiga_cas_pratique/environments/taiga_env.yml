@@ -1,0 +1,6 @@
+name: taiga_env
+variables:
+  - name: index
+    value: "0"
+  - name: count
+    value: "3"

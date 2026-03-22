@@ -1,0 +1,31 @@
+info:
+  name: 09_Get_Local_Issue_Data
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: http://localhost:3000/{{index}}
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        bru.setVar("json_subject", body.subject);
+        bru.setVar("json_description", body.description);
+
+        bru.setNextRequest("10_Create_Issue_From_JSON");
+    - type: tests
+      code: |-
+        test("Lecture locale OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

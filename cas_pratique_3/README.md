@@ -1,53 +1,65 @@
-# Cas pratique 3 - Tests Playwright Taiga
+# Cas pratique 3 - Playwright Taiga
 
 Ce dossier contient un projet de tests automatisés Playwright pour l'application Taiga.
 
-## Ce que fait le projet
+## Objectif
 
-- utilise `@playwright/test` pour lancer des tests de navigateur
-- contient des objets de page (`pages/`) pour structurer les actions
-- exécute un scénario principal dans `tests/taiga.spec.ts` qui :
-  1. ouvre la page de connexion Taiga
-  2. se connecte avec un compte utilisateur
-  3. accède directement au projet via son `slug`
-  4. ouvre la page des issues
-  5. crée une nouvelle issue avec un sujet, une description, un type, une sévérité et une priorité
-
-Le projet inclut aussi un exemple de test Playwright simple dans `tests/example.spec.ts`.
+Le test principal (`tests/taiga.spec.ts`) effectue les actions suivantes :
+1. ouvrir la page de connexion Taiga
+2. se connecter avec un compte utilisateur
+3. accéder au projet via son `slug`
+4. ouvrir la page des issues
+5. créer une nouvelle issue
 
 ## Structure du dossier
 
-- `package.json` : dépendances du projet
+- `package.json` : dépendances et scripts
 - `playwright.config.ts` : configuration Playwright
-- `pages/` : objets de page pour `LoginPage`, `DashboardPage` et `IssuesPage`
+- `pages/` : classes de page pour les actions Web
 - `tests/` : cas de test Playwright
-- `utils/test-data.ts` : données de test partagées (URL, identifiants, slug de projet)
+- `utils/test-data.ts` : lecture des variables d'environnement
+- `.env.example` : modèle pour les paramètres secrets
 
-## Prérequis
-
-- Node.js installé
-- Accès Internet pour atteindre `https://tree.taiga.io`
-- Compte Taiga valide correspondant aux identifiants dans `utils/test-data.ts`
-
-## Installation
+## Étapes pour lancer le projet
 
 1. Ouvrir un terminal dans `cas_pratique_3`
 2. Installer les dépendances :
 
 ```bash
-npm install
+npx install
 ```
 
-## Lancer les tests
+3. Créer le fichier `.env` à partir du modèle :
 
-Depuis `cas_pratique_3` :
+```bash
+copy .env.example .env
+```
+
+4. Ouvrir `.env` et modifier :
+
+```ini
+TAIGA_USERNAME=your_taiga_username
+TAIGA_PASSWORD=your_taiga_password
+```
+
+5. Lancer les tests :
 
 ```bash
 npx playwright test
 ```
 
-## Notes
+## Exemple de `.env`
 
-- Le navigateur s'ouvre en mode non-headless (`headless: false`) pour suivre le déroulement des actions.
-- Les tests créent une issue dans le projet Taiga spécifié par `PROJECT_SLUG`.
-- Si nécessaire, adaptez les identifiants ou l'URL dans `utils/test-data.ts`.
+```ini
+TAIGA_BASE_URL=https://tree.taiga.io
+TAIGA_PROJECT_NAME=Projet-TDD
+TAIGA_PROJECT_SLUG=abdelaziztaiga-projet-tdd
+TAIGA_USERNAME=votre_nom_d_utilisateur
+TAIGA_PASSWORD=votre_mot_de_passe
+```
+
+## Remarques
+
+- Le test utilise `.env` pour charger les identifiants Taiga.
+- Le navigateur est lancé en mode visible (`headless: false`) pour observer l'exécution.
+- Si vous modifiez le projet ou l'URL, adaptez les valeurs dans `.env`.

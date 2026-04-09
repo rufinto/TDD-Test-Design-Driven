@@ -1,0 +1,16 @@
+[
+  {
+    "subject": "Bug UI 01",
+    "description": "Description du bug UI 01",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Bug UI 02",
+    "description": "Description du bug UI 02",
+    "type": "Bug",
+    "severity": "Normal",
+    "priority": "Low"
+  }
+]

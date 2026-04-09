@@ -1,0 +1,29 @@
+[
+	{
+		"subject": "Load test issue 1",
+		"description": "Created during load test",
+		"priority": "3",
+		"severity": "2",
+		"status": "1",
+		"type": "1",
+		"tags": []
+	},
+	{
+		"subject": "Load test issue 2",
+		"description": "Performance test scenario",
+		"priority": "2",
+		"severity": "3",
+		"status": "1",
+		"type": "2",
+		"tags": []
+	},
+	{
+		"subject": "Load test issue 3",
+		"description": "Performance test scenario",
+		"priority": "1",
+		"severity": "5",
+		"status": "1",
+		"type": "3",
+		"tags": []
+	}
+]

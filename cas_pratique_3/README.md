@@ -26,7 +26,7 @@ Le test principal (`tests/taiga.spec.ts`) effectue les actions suivantes :
 2. Installer les dépendances :
 
 ```bash
-npx install
+npm install
 ```
 
 3. Créer le fichier `.env` à partir du modèle :

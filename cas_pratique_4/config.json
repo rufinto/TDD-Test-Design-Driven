@@ -1,0 +1,22 @@
+{
+	"local": {
+		"baseUrl": "http://localhost:9000",
+		"host": "localhost:8200",
+		"username": "julien",
+		"email": "julien.dupont@test.com",
+		"password": "TestTest",
+		"project": "TDD Class",
+		"projectSlug": "tdd-class",
+		"vus": 1
+	},
+	"prod": {
+		"baseUrl": "https://taiga.io/",
+		"host": "taiga.io",
+		"username": "julien",
+		"email": "julien.dupont@test.com",
+		"password": "TestTest",
+		"project": "TDD class",
+		"projectSlug": "tdd-class",
+		"vus": 1
+	}
+}

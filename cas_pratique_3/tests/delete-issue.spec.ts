@@ -4,10 +4,12 @@ import { DashboardPage } from '../pages/dashboard.page';
 import { IssuesPage } from '../pages/issues.page';
 import { USERNAME, PASSWORD, PROJECT_SLUG } from '../utils/test-data';
 
-test('ouvrir la page des issues', async ({ page }) => {
+test('rechercher une anomalie et la supprimer', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const dashboardPage = new DashboardPage(page);
   const issuesPage = new IssuesPage(page);
+
+  const subject = `Issue à supprimer ${Date.now()}`;
 
   await loginPage.goto();
   await loginPage.login(USERNAME, PASSWORD);
@@ -15,10 +17,18 @@ test('ouvrir la page des issues', async ({ page }) => {
   await issuesPage.navigate();
 
   await issuesPage.createIssue(
-    'Nouveau Issue de test',
-    'Description de test via Playwright',
+    subject,
+    'Issue créée pour test de suppression',
     'Bug',
-    'Minor',
-    'Low'
+    'Critical',
+    'High'
   );
+
+  await issuesPage.searchIssue(subject);
+  await issuesPage.openIssueBySubject(subject);
+  await issuesPage.deleteCurrentIssue();
+
+  await issuesPage.navigate();
+  await issuesPage.searchIssue(subject);
+  await issuesPage.expectIssueNotVisible(subject);
 });

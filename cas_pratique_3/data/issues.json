@@ -1,16 +1,142 @@
 [
   {
-    "subject": "Bug UI 01",
-    "description": "Description du bug UI 01",
+    "subject": "Bug login 01",
+    "description": "Erreur sur la page de connexion",
     "type": "Bug",
     "severity": "Critical",
     "priority": "High"
   },
   {
-    "subject": "Bug UI 02",
-    "description": "Description du bug UI 02",
+    "subject": "Question API 02",
+    "description": "Question sur le comportement de l'API",
+    "type": "Question",
+    "severity": "Minor",
+    "priority": "Low"
+  },
+  {
+    "subject": "Bug export 03",
+    "description": "Le bouton export ne fonctionne pas",
     "type": "Bug",
+    "severity": "Critical",
+    "priority": "Normal"
+  },
+  {
+    "subject": "Amélioration UI 04",
+    "description": "Améliorer la lisibilité du tableau",
+    "type": "Enhancement",
+    "severity": "Wishlist",
+    "priority": "Low"
+  },
+  {
+    "subject": "Bug filtre 05",
+    "description": "Le filtre ne retourne pas les bons résultats",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Question workflow 06",
+    "description": "Question sur le workflow de validation",
+    "type": "Question",
+    "severity": "Normal",
+    "priority": "Normal"
+  },
+  {
+    "subject": "Bug modal 07",
+    "description": "La modale ne se ferme pas",
+    "type": "Bug",
+    "severity": "Important",
+    "priority": "High"
+  },
+  {
+    "subject": "Bug recherche 08",
+    "description": "La recherche retourne une erreur",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Amélioration menu 09",
+    "description": "Ajouter un raccourci dans le menu",
+    "type": "Enhancement",
+    "severity": "Minor",
+    "priority": "Low"
+  },
+  {
+    "subject": "Bug import 10",
+    "description": "Import CSV impossible",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "Normal"
+  },
+  {
+    "subject": "Question sécurité 11",
+    "description": "Clarifier les règles de sécurité",
+    "type": "Question",
+    "severity": "Important",
+    "priority": "High"
+  },
+  {
+    "subject": "Bug permissions 12",
+    "description": "Mauvaise gestion des permissions",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Amélioration tableau 13",
+    "description": "Ajouter un tri par date",
+    "type": "Enhancement",
     "severity": "Normal",
     "priority": "Low"
+  },
+  {
+    "subject": "Bug profil 14",
+    "description": "Erreur lors de la mise à jour du profil",
+    "type": "Bug",
+    "severity": "Important",
+    "priority": "Normal"
+  },
+  {
+    "subject": "Bug notifications 15",
+    "description": "Notifications non reçues",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Question reporting 16",
+    "description": "Question sur le reporting",
+    "type": "Question",
+    "severity": "Minor",
+    "priority": "Low"
+  },
+  {
+    "subject": "Bug dashboard 17",
+    "description": "Le dashboard ne charge pas",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Amélioration formulaire 18",
+    "description": "Rendre le formulaire plus clair",
+    "type": "Enhancement",
+    "severity": "Wishlist",
+    "priority": "Normal"
+  },
+  {
+    "subject": "Bug session 19",
+    "description": "Déconnexion inattendue",
+    "type": "Bug",
+    "severity": "Critical",
+    "priority": "High"
+  },
+  {
+    "subject": "Bug upload 20",
+    "description": "Upload de fichier en échec",
+    "type": "Bug",
+    "severity": "Important",
+    "priority": "Normal"
   }
 ]

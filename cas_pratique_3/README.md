@@ -26,7 +26,7 @@ Le test principal (`tests/taiga.spec.ts`) effectue les actions suivantes :
 2. Installer les dépendances :
 
 ```bash
-npx install
+npm install
 ```
 
 3. Créer le fichier `.env` à partir du modèle :
@@ -46,6 +46,26 @@ TAIGA_PASSWORD=your_taiga_password
 
 ```bash
 npx playwright test
+```
+
+## Lancer chaque test individuel
+
+- Créer 20 issues à partir du JSON :
+
+```bash
+npx playwright test tests/createMultipleIssues.spec.ts
+```
+
+- Filtrer les issues par type et severity :
+
+```bash
+npx playwright test tests/filter-issues.spec.ts
+```
+
+- Créer une anomalie puis supprimer l'issue :
+
+```bash
+npx playwright test tests/delete-issue.spec.ts
 ```
 
 ## Exemple de `.env`
